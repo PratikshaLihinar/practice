@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add city</title>
+
+    <script>
+        var cities=[];
+        function Addcity(){
+            var c = document.getElementById("txtct").value;
+            if(cities.indexOf(c)==-1){
+            cities.push(c);
+            document.getElementById("txtct").value="";
+            Display();
+            
+        }
+        else{
+            alert("city is alredy present!");
+        }
+        }
+       function Display()
+        {
+            var data ="";
+            cities.forEach(function(d,i) {
+                data+="<li>"+ d +"</li>";
+            });
+            document.getElementById("mycities").innerHTML=data;
+        }
+    </script>
+</head>
+<body>
+    City <input type="text" name="" id="txtct"><input type="button" value="Add" onclick="Addcity()">
+    <ul id="mycities"></ul>
+    
+</body>
+</html>

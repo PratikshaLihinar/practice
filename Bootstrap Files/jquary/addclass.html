@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="jq_function.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.min.css" integrity="sha512-+0Vhbu8sRUlg+R/NKgTv7ahM+szPDF10G6J5PcHb1tOrAaquZIUiKUV3TH16mi6fuH4NjvHqlok6ppBhR6Nxuw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script>
+        $(document).ready(function(){
+            $("button").click(function(){
+                // $('h1,h2,p').removeClass("red");
+                $('h1,h2,p').toggleClass("red");
+
+                $("div").addClass("big red");
+            })
+        })
+    </script>
+    <style>
+        .big{
+            font-weight: bold;
+            font-size: x-large;
+        }
+        .red{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="red">heading 1</h1>
+    <h2 class="red">heading2</h2>
+    <p class="red">text line</p>
+    <div>text line2</div>
+    <button>Add class</button>
+</body>
+</html>

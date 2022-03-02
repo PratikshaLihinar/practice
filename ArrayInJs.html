@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays</title>
+
+    <script>
+        function Display(){
+        data = [10,20,30,40,50]
+        // fetch all element in array
+        // for(var i=0;i<data.length;i++){
+        //     document.write(data[i]);
+        // }
+
+        // forEach loop
+        // data.forEach(function(d,i)  {
+        //     document.write("value = "+d+" index = "+i+"<br>");
+            
+        // });
+
+        var data1="";
+        data.forEach(function(d,i) {
+            data1=data1+"<li>"+d+"</li>";
+
+        });
+        document.getElementById("mydata").innerHTML = data1;
+    }
+    </script>
+</head>
+<body onload="Display()">
+    <ul id="mydata">
+        
+
+    </ul>
+</body>
+</html>

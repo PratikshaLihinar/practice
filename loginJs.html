@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login inner html</title>
+    <script>
+        if(localStorage.getItem("user_name")!==null){
+            window.location.href="home.html"
+        }
+        function checklogin() {
+       
+            var u = document.getElementById("txtuser").value;
+            var p = document.getElementById("txtpass").value;
+            if(u=="ajay" && p==12345)
+            {
+                // document.getElementById("dv").innerHTML="login successfully";
+                // In gmail we login ones and it stores dats into local storage three methon setItem,getIterm,remove
+                localStorage.setItem("user_name",u);
+                //  redirect to next page 
+                window.location.href="home.html";
+
+            }
+            else
+            {
+                document.getElementById("dv").innerHTML="login unsuccessfully";
+            }
+
+        }
+    </script>
+</head>
+<body>
+    username <input type="text" id="txtuser"/>
+    <br>
+    password <input type="password" name="" id="txtpass"/> 
+    <br>
+    <input type="button" value="Login" onclick="checklogin()"/>
+    <div id="dv"></div>   
+</body>
+</html>

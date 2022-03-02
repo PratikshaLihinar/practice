@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#btnsquare").click(function(){
+                var n = Number($("#txtnum").val());
+                var b= n*n
+                // $("#dv").html("square = "+b);
+                // $("#dv").html("<h1> Square = "+b+"</h1>");
+                $("#dv").text("<h1> Square = "+b+"</h1>");
+
+            })
+        })
+    </script>
+</head>
+<body>
+    Number : <input type="text" id="txtnum"/>
+    <input type="button" value="square" id="btnsquare">
+    <div id="dv"></div>
+    
+</body>
+</html>

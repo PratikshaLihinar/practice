@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>inbuild functions</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#btnhide").click(function () {
+                $("#dv").hide();
+            })
+            $("#btnshow").click(function () {
+                $("#dv").show();
+            })
+            $("#btnhideshow").click(function () {
+                $("#dv").toggle();
+            })
+            $("#btnfadeout").click(function () {
+                $("#dv").fadeOut();
+            })
+            $("#btnfadetoggle").click(function () {
+                $("#dv").fadeToggle(5000);
+            })
+            $("#btnslideup").click(function () {
+                $("#dv").slideUp();
+            })
+            $("#btnslidedown").click(function () {
+                $("#dv").slideDown();
+            })
+            $("#btnslidetoggle").click(function () {
+                $("#dv").slideToggle();
+            })
+            $("#btnanimate").click(function () {
+                $("#dv").animate({ height: "200px" });
+            })
+            $("#btnreanimate").click(function () {
+                $("#dv").animate({ height: "100px" });
+            })
+            $("#btnincreaseanimate").click(function () {
+                $("#dv").animate({ height: "+=100px", width: "+=100" });
+            })
+            $("#btnanimateee").click(function () {
+                for (i = 1; i <= 5; i++) {
+                    $("#dv").animate({ "left": "400px" });
+                    $("#dv").animate({ "top": "400px" });
+                    $("#dv").animate({ "left": "100px" });
+                    $("#dv").animate({ "top": "100px" });
+                }
+            })
+
+            $("#btnreanimate1").click(function () {
+                $("#dv").animate({ left: "800px", opacity: 0.25, height: "toggle" }, 1000);
+            })
+            // queue functionatily
+            $("#btnreanimate2").click(function () {
+                var dv = $("#dv");
+                dv.animate({ height: '500px', opacity: '0.5' }, 1000);
+                dv.animate({ width: '500px', opacity: '0.9' }, 500);
+                dv.animate({ height: '200px', opacity: '0.5' }, 1000);
+                dv.animate({ width: '200px', opacity: '0.9' }, 500);
+            })
+            $("#start").click(function () {
+                $("#dv").animate({ left: '800px' }, 3000);
+            });
+            $("#stop").click(function () {
+                $("#dv").stop();
+            })
+            //callback funtion ensure after comlite one animation secodn animation is star
+            $("#start1").click(function () {
+                $("#dv").hide(1000, function () {
+                    alert("The square is now hidden")
+                })
+            });
+            $("#start3").click(function () {
+                $("#dv").css("background-color", "blue")
+                    .slideUp(2000)
+                    .slideDown(2000);
+
+            });
+            //dragable
+            $(function(){
+                $("#dv").draggable();
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <h2>Jquery Method</h2>
+    <input type="button" value="Hide" id="btnhide" />
+    <input type="button" value="Show" id="btnshow" />
+    <input type="button" value="hide/show" id="btnhideshow">
+    <input type="button" value="fadeIn" id="btnfadein">
+    <input type="button" value="fadeout" id="btnfadeout">
+    <input type="button" value="fadeToggle" id="btnfadetoggle">
+    <input type="button" value="slideUp" id="btnslideup">
+    <input type="button" value="slideDown" id="btnslidedown">
+    <input type="button" value="slideToggle" id="btnslidetoggle">
+    <input type="button" value="animate" id="btnanimate">
+    <input type="button" value="reanimate" id="btnreanimate">
+    <input type="button" value="Go" id="btnanimateee">
+    <input type="button" value="Again animate" id="btnincreaseanimate">
+    <input type="button" value="btnreanimate1" id="btnreanimate1">
+    <input type="button" value="btnreanimate2" id="btnreanimate2">
+    <input type="button" value="start" id="start">
+    <input type="button" value="stop" id="stop">
+    <input type="button" value="start1" id="start1">
+    <input type="button" value="chaining" id="start3">
+    <div id="dv" style="height: 200px;width: 200px;background-color: coral; position: absolute;">
+
+    </div>
+
+</body>
+
+</html>
